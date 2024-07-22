@@ -49,10 +49,7 @@ find_package(
   COMPONENTS Development
   REQUIRED)
 
-find_package(
-  Machinekit-HAL
-  COMPONENTS Unmanaged-HAL
-  REQUIRED)
+include(${CMAKE_SOURCE_DIR}/../../../../lib/cmake/Machinekit-HAL/MachinekitHALUnmanaged-HALComponent.cmake)
 
 set(SOURCE_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/machinekit/hal/pyhal/halmodule.cc)

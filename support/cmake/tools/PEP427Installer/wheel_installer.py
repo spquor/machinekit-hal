@@ -71,18 +71,22 @@ def main(args):
 
     for wheel in args.wheel_path:
         with WheelFile.open(wheel) as source:
-            install(
-                source=source,
-                destination=destination,
-                # Additional metadata that is generated
-                # by the installation tool.
-                additional_metadata={
-                    "INSTALLER": 'Machinekit-HAL Python wheel'
-                    f'installer {__version__}'.encode('utf-8'),
-                },
-            )
-
-        print(f'Wheel {wheel} installed')
+            try: 
+                install(
+                    source=source,
+                    destination=destination,
+                    # Additional metadata that is generated
+                    # by the installation tool.
+                    additional_metadata={
+                        "INSTALLER": 'Machinekit-HAL Python wheel'
+                        f'installer {__version__}'.encode('utf-8'),
+                    },
+                )
+            except FileExistsError:
+                pass
+                print(f'Wheel {wheel} already installed')
+            else:
+                print(f'Wheel {wheel} installed')
 
     print("All wheels were installed!")
 

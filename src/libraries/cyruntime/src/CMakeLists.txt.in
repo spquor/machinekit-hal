@@ -48,10 +48,8 @@ find_package(
   COMPONENTS Development
   REQUIRED)
 
-find_package(
-  Machinekit-HAL
-  COMPONENTS Unmanaged-Runtime HAL-Command
-  REQUIRED)
+include(${CMAKE_SOURCE_DIR}/../../../../lib/cmake/Machinekit-HAL/MachinekitHALUnmanaged-RuntimeComponent.cmake)
+include(${CMAKE_SOURCE_DIR}/../../../../lib/cmake/Machinekit-HAL/MachinekitHALHAL-CommandComponent.cmake)
 
 set(SOURCE_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/machinekit/hal/cyruntime/rtapi.c)

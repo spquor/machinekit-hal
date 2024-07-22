@@ -48,10 +48,7 @@ find_package(
   COMPONENTS Development
   REQUIRED)
 
-find_package(
-  Machinekit-HAL
-  COMPONENTS Unmanaged-Runtime
-  REQUIRED)
+include(${CMAKE_SOURCE_DIR}/../../../../lib/cmake/Machinekit-HAL/MachinekitHALUnmanaged-RuntimeComponent.cmake)
 
 set(SOURCE_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/machinekit/hal/cycompat/compat.c)
