@@ -21,6 +21,8 @@
 #include <limits.h>       // PATH_MAX
 #include <string>
 
+using namespace std;
+
 // dlinfo()
 #ifndef _GNU_SOURCE
 #define _GNU_SOURCE

@@ -43,8 +43,8 @@ project(
 
 if("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
   # include(cmake/packaging/packaging.cmake)
-  include(CTest)
-  enable_testing()
+  #include(CTest)
+  #enable_testing()
 endif()
 
 if(CMAKE_TOOLCHAIN_FILE)

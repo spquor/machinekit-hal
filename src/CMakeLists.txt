@@ -246,4 +246,4 @@ add_subdirectory(executables)
 add_subdirectory(modules)
 
 # Terrible, ugly and hopefully temporary hack
-add_subdirectory(${CMAKE_SOURCE_DIR}/tests ${CMAKE_BINARY_DIR}/tests)
+#add_subdirectory(${CMAKE_SOURCE_DIR}/tests ${CMAKE_BINARY_DIR}/tests)

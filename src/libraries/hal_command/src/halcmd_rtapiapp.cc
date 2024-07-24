@@ -15,6 +15,8 @@
 
 using namespace google::protobuf;
 
+using namespace std;
+
 static machinetalk::Container command, reply;
 
 static zsock_t *z_command = NULL;
