@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-make
-cp -rv ./build/python/machinetalk python

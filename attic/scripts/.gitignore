@@ -1,9 +1,0 @@
-rip-environment
-halrun
-realtime
-latencyplot
-latencyhistogram
-gen-rtapi.ini.sh
-gen-rtapi.ini.sh.in
-rtapi.conf
-check-build-vs-configure-sha
