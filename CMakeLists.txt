@@ -42,9 +42,8 @@ project(
   LANGUAGES C CXX)
 
 if("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
-  # include(cmake/packaging/packaging.cmake)
-  #include(CTest)
-  #enable_testing()
+  include(CTest)
+  enable_testing()
 endif()
 
 if(CMAKE_TOOLCHAIN_FILE)
@@ -109,12 +108,12 @@ set(CMAKE_CC_STANDARD 17)
 set(CMAKE_CXX_STANDARD 14)
 
 # TODO: Make a real effort at setting relevant flags
-set(CMAKE_C_FLAGS_DEBUG "-g -O0")
-set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
-set(CMAKE_C_FLAGS_RELEASE "-O0")
-set(CMAKE_CXX_FLAGS_RELEASE "-O0")
-set(CMAKE_C_FLAGS_RELWITHDEBINFO "-g -O0")
-set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-g -O0")
+#set(CMAKE_C_FLAGS_DEBUG "-g -O0")
+#set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
+#set(CMAKE_C_FLAGS_RELEASE "-O0")
+#set(CMAKE_CXX_FLAGS_RELEASE "-O0")
+#set(CMAKE_C_FLAGS_RELWITHDEBINFO "-g -O0")
+#set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-g -O0")
 
 message(STATUS "Value of CMAKE_CXX_FLAGS: ${CMAKE_CXX_FLAGS}")
 message(STATUS "Value of CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}")
@@ -138,9 +137,7 @@ cpack_add_component_group(MachinekitHAL_Package_Base_Libraries)
 cpack_add_component_group(MachinekitHAL_Package_Base_Libraries_Development)
 cpack_add_component_group(MachinekitHAL_Package_Base_Managed_Modules_Components)
 cpack_add_component_group(MachinekitHAL_Package_Base_Managed_Modules_Drivers)
-cpack_add_component_group(
-  MachinekitHAL_Package_Base_Managed_Modules_Drivers_Development)
-cpack_add_component_group(
-  MachinekitHAL_Package_Base_Unmanaged_Modules_Components)
+cpack_add_component_group(MachinekitHAL_Package_Base_Managed_Modules_Drivers_Development)
+cpack_add_component_group(MachinekitHAL_Package_Base_Unmanaged_Modules_Components)
 cpack_add_component_group(MachinekitHAL_Package_Base_Unmanaged_Modules_Drivers)
 cpack_add_component_group(MachinekitHAL_Package_Base_Tests_Runtests)

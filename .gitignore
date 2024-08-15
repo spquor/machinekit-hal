@@ -26,7 +26,8 @@ lib/python/touchy
 /etc/
 tests/rtapi.0/rtapi_test
 tests/bitops.0/bitops
-#
+# vscode settings
+.vscode/*.json
 # emacs droppings
 *~
 \#*\#
