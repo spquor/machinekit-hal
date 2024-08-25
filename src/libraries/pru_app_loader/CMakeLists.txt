@@ -24,7 +24,7 @@
 # #####################################################################
 # ~~~
 
-if(CMAKE_SYSTEM_PROCESSOR STREQUAL "arm")
+if(CMAKE_SYSTEM_PROCESSOR MATCHES "^arm.*")
   option(BUILD_PRU_APP_LOADER_LIBRARY "Built the PRU App Loader library." TRUE)
 
   if(BUILD_PRU_APP_LOADER_LIBRARY)

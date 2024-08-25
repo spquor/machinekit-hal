@@ -24,7 +24,7 @@
 # #####################################################################
 # ~~~
 
-if(CMAKE_SYSTEM_PROCESSOR STREQUAL "arm")
+if(CMAKE_SYSTEM_PROCESSOR MATCHES "^arm.*")
   option(BUILD_HAL_CHIP_GPIO_MANAGED_DRIVER_MODULE
          "Built the Chip HAL managed driver module." TRUE)
 

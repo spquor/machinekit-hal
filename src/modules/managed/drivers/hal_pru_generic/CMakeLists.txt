@@ -24,7 +24,7 @@
 # #####################################################################
 # ~~~
 
-if(CMAKE_SYSTEM_PROCESSOR STREQUAL "arm")
+if(CMAKE_SYSTEM_PROCESSOR MATCHES "^arm.*")
   option(BUILD_HAL_PRU_GENERIC_MANAGED_DRIVER_MODULE
          "Built the PRU Generic HAL managed driver module." TRUE)
   if(BUILD_HAL_PRU_GENERIC_MANAGED_DRIVER_MODULE)
@@ -46,11 +46,11 @@ if(CMAKE_SYSTEM_PROCESSOR STREQUAL "arm")
     add_executable(pru_generic_direct_io_only)
     add_executable(pru_generic_bbai_direct_io_only)
     add_executable(pru_decamux)
-    add_executable(pru_generic_debug)
-    add_executable(pru_generic_bbai_debug)
-    add_executable(pru_generic_direct_io_only_debug)
-    add_executable(pru_generic_bbai_direct_io_only_debug)
-    add_executable(pru_decamux_debug)
+    # add_executable(pru_generic_debug)
+    # add_executable(pru_generic_bbai_debug)
+    # add_executable(pru_generic_direct_io_only_debug)
+    # add_executable(pru_generic_bbai_direct_io_only_debug)
+    # add_executable(pru_decamux_debug)
     add_library(pru_empty_resource_table OBJECT)
 
     # ~~~
@@ -169,14 +169,14 @@ if(CMAKE_SYSTEM_PROCESSOR STREQUAL "arm")
     target_sources(pru_generic_bbai_direct_io_only
                    PRIVATE ${FIRMWARE_PRU_GENERIC_BBAI_DIRECT_IO_ONLY_SOURCE})
     target_sources(pru_decamux PRIVATE ${FIRMWARE_PRU_DECAMUX_SOURCE})
-    target_sources(pru_generic_debug PRIVATE ${FIRMWARE_PRU_GENERIC_SOURCE})
-    target_sources(pru_generic_bbai_debug
-                   PRIVATE ${FIRMWARE_PRU_GENERIC_BBAI_SOURCE})
-    target_sources(pru_generic_direct_io_only_debug
-                   PRIVATE ${FIRMWARE_PRU_GENERIC_DIRECT_IO_ONLY_SOURCE})
-    target_sources(pru_generic_bbai_direct_io_only_debug
-                   PRIVATE ${FIRMWARE_PRU_GENERIC_BBAI_DIRECT_IO_ONLY_SOURCE})
-    target_sources(pru_decamux_debug PRIVATE ${FIRMWARE_PRU_DECAMUX_SOURCE})
+    # target_sources(pru_generic_debug PRIVATE ${FIRMWARE_PRU_GENERIC_SOURCE})
+    # target_sources(pru_generic_bbai_debug
+    #                PRIVATE ${FIRMWARE_PRU_GENERIC_BBAI_SOURCE})
+    # target_sources(pru_generic_direct_io_only_debug
+    #                PRIVATE ${FIRMWARE_PRU_GENERIC_DIRECT_IO_ONLY_SOURCE})
+    # target_sources(pru_generic_bbai_direct_io_only_debug
+    #                PRIVATE ${FIRMWARE_PRU_GENERIC_BBAI_DIRECT_IO_ONLY_SOURCE})
+    # target_sources(pru_decamux_debug PRIVATE ${FIRMWARE_PRU_DECAMUX_SOURCE})
     target_sources(pru_empty_resource_table
                    PRIVATE ${PRU_EMPTY_RESOURCE_TABLE_SOURCES})
 
@@ -235,24 +235,24 @@ if(CMAKE_SYSTEM_PROCESSOR STREQUAL "arm")
       )
     endforeach()
 
-    foreach(
-      processed_target IN
-      ITEMS "pru_generic_debug" "pru_generic_bbai_debug"
-            "pru_generic_direct_io_only_debug"
-            "pru_generic_bbai_direct_io_only_debug" "pru_decamux_debug")
+    # foreach(
+    #   processed_target IN
+    #   ITEMS "pru_generic_debug" "pru_generic_bbai_debug"
+    #         "pru_generic_direct_io_only_debug"
+    #         "pru_generic_bbai_direct_io_only_debug" "pru_decamux_debug")
 
-      string(REPLACE "_debug" "" output_name "${processed_target}")
+    #   string(REPLACE "_debug" "" output_name "${processed_target}")
 
-      target_compile_options(${processed_target}
-                             PRIVATE "${pru_pview_debug_file}")
+    #   target_compile_options(${processed_target}
+    #                          PRIVATE "${pru_pview_debug_file}")
 
-      set_target_properties(
-        ${processed_target}
-        PROPERTIES
-          RUNTIME_OUTPUT_DIRECTORY
-          "${MACHINEKIT_HAL_ARTIFACTS_MOUNTPOINT_DIRECTORY}/${CMAKE_INSTALL_LIBDIR}/${MACHINEKIT_HAL_PACKAGE_PREFIX_PATH}/prubin"
-          OUTPUT_NAME "${output_name}")
-    endforeach()
+    #   set_target_properties(
+    #     ${processed_target}
+    #     PROPERTIES
+    #       RUNTIME_OUTPUT_DIRECTORY
+    #       "${MACHINEKIT_HAL_ARTIFACTS_MOUNTPOINT_DIRECTORY}/${CMAKE_INSTALL_LIBDIR}/${MACHINEKIT_HAL_PACKAGE_PREFIX_PATH}/prubin"
+    #       OUTPUT_NAME "${output_name}")
+    # endforeach()
 
     # ~~~
     # The MODULE portion ###

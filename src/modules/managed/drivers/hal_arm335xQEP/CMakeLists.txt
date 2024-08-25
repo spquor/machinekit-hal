@@ -24,7 +24,7 @@
 # #####################################################################
 # ~~~
 
-if(CMAKE_SYSTEM_PROCESSOR STREQUAL "arm")
+if(CMAKE_SYSTEM_PROCESSOR MATCHES "^arm.*")
   option(BUILD_HAL_ARM335XQEP_MANAGED_DRIVER_MODULE
          "Built the Arm335xQEP HAL managed driver module." TRUE)
 
